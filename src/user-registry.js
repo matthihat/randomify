@@ -28,7 +28,7 @@ export class UserRegistry {
    */
   createUserWith(userId, name) {
     // Throws error if id is not unique in array
-    IdValidator.validateUniqueIdIn(this.#users, name);
+    IdValidator.validateUniqueIdIn(this.#users, userId);
     const user = new User(name, userId);
     this.#users.push(user);
   }
