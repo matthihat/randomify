@@ -42,4 +42,11 @@ describe("User registry tests", () => {
     }).toThrow(new IllegalIdException("Id already exists"));
     expect(userRegistry.getNrOfUsers()).toEqual(1);
   });
+
+  it("Should remove user by given id", () => {
+    userRegistry.createUserWith(1, "anv1");
+    userRegistry.removeUserBy(1);
+
+    expect(userRegistry.getNrOfUsers()).toEqual(0);
+  });
 });
