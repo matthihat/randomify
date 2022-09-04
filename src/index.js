@@ -2,7 +2,7 @@ import { IdGenerator } from "./id-generator.js";
 import { UserRegistry } from "./user-registry.js";
 import { User } from "./models/user.js";
 
-export class Randomizer {
+export default class Randomizer {
   #idGenerator = new IdGenerator();
   #userRegistry = new UserRegistry(this.#idGenerator);
   #shouldRemoveUserWhenChosen = false;
