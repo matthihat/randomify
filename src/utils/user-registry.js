@@ -1,6 +1,6 @@
-import { NotFoundException } from "./models/exceptions/NotFoundException.js";
-import { User } from "./models/user.js";
-import { IdValidator } from "./validators/id-validator.js";
+import { NotFoundException } from "../models/exceptions/NotFoundException.js";
+import { User } from "../models/user.js";
+import { IdValidator } from "../validators/id-validator.js";
 
 export class UserRegistry {
   #users = [];

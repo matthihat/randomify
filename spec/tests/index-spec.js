@@ -1,4 +1,4 @@
-import { Randomizer } from "../../src/index.js";
+import Randomizer from "../../src/index.js";
 
 var sut;
 

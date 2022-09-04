@@ -1,7 +1,7 @@
-import { IdGenerator } from "../../src/id-generator.js";
+import { IdGenerator } from "../../src/utils/id-generator.js";
 import { IllegalIdException } from "../../src/models/exceptions/IllegalIdException.js";
 import { NotFoundException } from "../../src/models/exceptions/NotFoundException.js";
-import { UserRegistry } from "../../src/user-registry.js";
+import { UserRegistry } from "../../src/utils/user-registry.js";
 
 var sut;
 

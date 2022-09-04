@@ -1,6 +1,5 @@
-import { IdGenerator } from "./id-generator.js";
-import { UserRegistry } from "./user-registry.js";
-import { User } from "./models/user.js";
+import { IdGenerator } from "./utils/id-generator.js";
+import { UserRegistry } from "./utils/user-registry.js";
 
 export default class Randomizer {
   #idGenerator = new IdGenerator();
