@@ -1,9 +1,9 @@
-import { IdGenerator } from "./id-generator";
-import { UserRegistry } from "./user-registry";
-import { User } from "./models/user";
+import { IdGenerator } from "./id-generator.js";
+import { UserRegistry } from "./user-registry.js";
+import { User } from "./models/user.js";
 
 export class Randomizer {
-  #idGenerator = IdGenerator();
+  #idGenerator = new IdGenerator();
   #userRegistry = new UserRegistry(this.#idGenerator);
   #shouldRemoveUserWhenChosen = false;
 
@@ -20,7 +20,7 @@ export class Randomizer {
    * @param {string} name - The users' name.
    * @throws {IllegalIdException} - Error if id is not unique.
    */
-  addUser(userId, name) {
+  addUserWith(userId, name) {
     this.#userRegistry.createUserWith(userId, name);
   }
 

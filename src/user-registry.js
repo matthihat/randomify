@@ -33,13 +33,34 @@ export class UserRegistry {
     this.#users.push(user);
   }
 
+  /**
+   * Removes a user by the given id.
+   *
+   * @param {number} userId - The id of the user to remove.
+   * @throws {NotFoundException} - If no user with the given id was found.
+   */
   removeUserBy(userId) {
+    // Vad ska hända om ingen med id hittas?
+    const userExists = this.#users.some((user) => user.id === userId);
+    if (!userExists) {
+      throw new NotFoundException("User does not exist");
+    }
     this.#users = this.#users.filter((user) => user.id !== userId);
   }
 
+  /**
+   * Removes a user by the given index.
+   *
+   * @param {number} userId - The index of the user to remove.
+   * @throws {NotFoundException} - If no user with the given index was found.
+   */
   removeUserByIndex(index) {
-    // Kanske kastar fel??
-    this.#users = this.#users.splice(index, 1);
+    const userToRemove = this.#users[index];
+    if (!userToRemove) {
+      throw new NotFoundException("User does not exist");
+    }
+    this.#users = this.#users.filter((user) => user.id !== userToRemove.id);
+    console.log(this.#users);
   }
 
   /**
@@ -57,7 +78,7 @@ export class UserRegistry {
    * @returns {User}
    */
   findUserById(userId) {
-    const user = this.#users.find((user) => user.userId === userId);
+    const user = this.#users.find((user) => user.id === userId);
     if (!user) {
       throw new NotFoundException("User does not exist");
     }
