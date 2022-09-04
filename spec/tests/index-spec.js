@@ -18,6 +18,12 @@ describe("Randomizer test", () => {
     expect(sut.getExecutionMode()).toBeFalse();
   });
 
+  it("Should set execution mode", () => {
+    sut.shouldRemoveUserWhenChosen(true);
+
+    expect(sut.getExecutionMode()).toBeTrue();
+  });
+
   it("Should remove user when chosen", () => {
     sut.addUser("namn");
     sut.addUser("namn2");

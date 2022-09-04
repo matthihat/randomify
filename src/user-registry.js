@@ -60,7 +60,6 @@ export class UserRegistry {
       throw new NotFoundException("User does not exist");
     }
     this.#users = this.#users.filter((user) => user.id !== userToRemove.id);
-    console.log(this.#users);
   }
 
   /**
