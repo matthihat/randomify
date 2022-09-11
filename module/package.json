@@ -1,0 +1,9 @@
+{
+  "name": "randomdecider",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "author": "Mattias Törnqvist mtoxr09",
+  "license": "ISC"
+}
