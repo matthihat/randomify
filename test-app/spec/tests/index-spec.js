@@ -1,17 +1,25 @@
-import Randomizer from "../../../module/src/index.js";
+import UserRandomizer from "../../../module/src/index.js";
+import { User } from "../../../module/src/models/user.js";
 
 var sut;
 
 beforeEach(() => {
-  sut = new Randomizer();
+  sut = new UserRandomizer();
 });
 
 describe("Randomizer test", () => {
-  it("should be able to get a user", () => {
+  it("Should be able to get a user", () => {
     sut.addUser("namn");
 
     const user = sut.getRandomUser();
     expect(user.name).toEqual("namn");
+    expect(user instanceof User).toBeTrue();
+  });
+
+  it("Should get null if no users are present", () => {
+    const user = sut.getRandomUser();
+
+    expect(user).toEqual(null);
   });
 
   it("Should get execution mode", () => {
