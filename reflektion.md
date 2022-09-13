@@ -1,13 +1,19 @@
-| Namn och förklaring | Reflektion och regler från Clean Code |
-| ------------------- | ------------------------------------- |
-| sdf                 | sdf                                   |
-|                     |                                       |
-|                     |                                       |
+# Reflektion
+
+## Namn
+
+| Namn och förklaring        | Reflektion och regler från Clean Code                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| UserRandomizer             | **Class Names** - Namn på klasser ska vara substantiv och inte ett verb. **Use Problem Domain Names** - User och Randomizer pekar på att domänen vi rör oss i har med användare och slumpgenerering att göra.                                                                                                                                                                                                                                                       |
+| addUser                    | **Use Pronounceable Names** - Går lätt att uttala. **Method Names** - Metoder på klasser ska vara verb                                                                                                                                                                                                                                                                                                                                                              |
+| addUserWith                | **Add Meaningful Context** - Eftersom att vi rör oss i ett otypat språk så indikerar vi är att vi kan lägga till en användare med + "vissa egenskaper". Kräver ju dock att vi faktiskt läser kommentarerna kring funktionen vilket kanske inte är bra bra. Denna konvention passar kanske bättre i ett typat språk. Tycker inte att boken tar upp skillander på hur funktionnamn ska skrivar beroende på typat eller otypat språk vilket enligt mig hade varit bra. |
+| shouldRemoveUserWhenChosen | **Pick One Word Per Concept** - Här blandar vi plötsligt in "chosen" när vi tidigare använt begreppet "random". Det hade varit bättre att använda det för att undvika det boken kallar **Avoid Mental Mapping**                                                                                                                                                                                                                                                     |
+| getExecutionMode           | **Use Problem Domain Names** - Domänen vi rör oss är användare och slumpgenerering men här blandar vi även in "ExecutionMode" och vad är detta egentligen? Hade varit bättre att följa det boken menar med **Method Names** och följa "is"+nånting för att peka på att vi får en klassvariabel som kan vara true eller false. Exempelvis isRemovingUserWhenRandomlyChosen eller liknande som också nämns under **Use Intention Revealing Names**                    |
 
 ## Funktioner (5 längsta)
 
-| Metodnamn | Antal rader | Reflektion |
-| --------- | ----------- | ---------- |
-| sdf       | sdf         | sdf        |
-|           |             |            |
-|           |             |            |
+| Metodnamn      | Antal rader | Reflektion                                                                 |
+| -------------- | ----------- | -------------------------------------------------------------------------- |
+| CreateUserWith | sdf         | Bättre att skicka in ett objekt med eller utan id och bara ha en funktion? |
+|                |             |                                                                            |
+|                |             |                                                                            |

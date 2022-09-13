@@ -1,9 +1,12 @@
 import { IdGenerator } from "./utils/id-generator.js";
 import { UserRegistry } from "./utils/user-registry.js";
+import { TypeValidator } from "./validators/type-validator.js";
+import { User } from "./models/user.js";
 
-export default class Randomizer {
+export default class UserRandomizer {
   #idGenerator = new IdGenerator();
-  #userRegistry = new UserRegistry(this.#idGenerator);
+  #typeValidator = new TypeValidator();
+  #userRegistry = new UserRegistry(this.#idGenerator, this.#typeValidator);
   #shouldRemoveUserWhenChosen = false;
 
   constructor() {}
@@ -49,6 +52,10 @@ export default class Randomizer {
    */
   getRandomUser() {
     const nrOfUsers = this.#userRegistry.getNrOfUsers();
+    if (nrOfUsers === 0) {
+      return null;
+    }
+
     const randomIndex = this.#getRandomInt(nrOfUsers);
     const user = this.#userRegistry.findUserByIndex(randomIndex);
 
