@@ -1,6 +1,4 @@
 import { InvalidTypeException } from "../models/exceptions/InvalidTypeException.js";
-import { IdGenerator } from "../utils/id-generator.js";
-import { UserRegistry } from "../utils/user-registry.js";
 
 export class TypeValidator {
   validateNameShouldBeString(name) {

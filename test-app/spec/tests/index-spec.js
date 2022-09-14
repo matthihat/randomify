@@ -8,11 +8,20 @@ beforeEach(() => {
 });
 
 describe("Randomizer test", () => {
-  it("Should be able to get a user", () => {
+  it("Should be able to get a user with a list of one user", () => {
     sut.addUser("namn");
 
     const user = sut.getRandomUser();
     expect(user.name).toEqual("namn");
+    expect(user instanceof User).toBeTrue();
+  });
+
+  it("Should be able to get a user with a list of many users", () => {
+    sut.addUser("namn1");
+    sut.addUser("namn2");
+    sut.addUser("namn3");
+
+    const user = sut.getRandomUser();
     expect(user instanceof User).toBeTrue();
   });
 
