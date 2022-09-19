@@ -12,7 +12,8 @@
 
 ## Kort reflektion
 
-Det jag saknade är som sagt ifall namngivningen skiljer sig mellan typade och otypade språk och ifall det är viktigt eller inte att skriva ex. jsdoc-kommentarer i otypade språk för att informera om typerna. Som vanligt tycker jag böckerna missar att förklara vad en "domän" är. Det tog mig flera år innan jag förstod vad som menades med det ävenf ast det är världens enklaste sak. Alltså verksamheten som koden avspeglar sig mot. Uncle Bob och hans böcker är lika kända som GOF så att ha denna bok som kursbok lämpar sig mycket väl!
+Det jag saknade är som sagt ifall namngivningen skiljer sig mellan typade och otypade språk och ifall det är viktigt eller inte att skriva ex. jsdoc-kommentarer i otypade språk för att informera om typerna. Som vanligt tycker jag böckerna missar att förklara vad en "domän" är. Det tog mig flera år innan jag förstod vad som menades med det ävenf ast det är världens enklaste sak. Alltså verksamheten som koden avspeglar sig mot. Något som jag upptäckt i min egen kod är att jag inte validerar typerna som skickas in i just mina validatorer. Jag vet inte ens om det är möjligt att åstadkomma om jag ska vara ärlig.  
+Uncle Bob och hans böcker är lika kända som GOF så att ha denna bok som kursbok lämpar sig mycket väl!
 
 ## Funktioner (5 längsta)
 

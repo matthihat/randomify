@@ -11,6 +11,11 @@ export default class UserRandomizer {
 
   constructor() {}
 
+  /**
+   * Adds a user to the registry.
+   *
+   * @param {string} name - The name of the user.
+   */
   addUser(name) {
     this.#userRegistry.createUser(name);
   }
