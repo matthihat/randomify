@@ -2,6 +2,7 @@ import { IdGenerator } from "./utils/id-generator.js";
 import { UserRegistry } from "./utils/user-registry.js";
 import { TypeValidator } from "./validators/type-validator.js";
 import { User } from "./models/user.js";
+import { NotFoundException } from "./models/exceptions/NotFoundException.js";
 
 export default class UserRandomizer {
   #idGenerator = new IdGenerator();
@@ -50,27 +51,29 @@ export default class UserRandomizer {
   }
 
   /**
-   * Randomly selects a user.
+   * Randomly selects a user. //TODO Informera om att användaren tas bort ibland.
    *
    * @throws {NotFoundException} - If no user was to be found.
    * @returns {User} - The user that was randomly picked.
    */
   getRandomUser() {
-    const nrOfUsers = this.#userRegistry.getNrOfUsers();
-    if (nrOfUsers === 0) {
-      return null;
+    const nrOfUsers = this.#userRegistry.getNrOfUsers(); // TODO byt ut till isEmpty()
+    if (nrOfUsers == 0) {
+      throw new NotFoundException("No user to be found"); // Kasta fel istället
     }
 
-    const randomIndex = this.#getRandomInt(nrOfUsers);
-    const user = this.#userRegistry.findUserByIndex(randomIndex);
+    const randomIndex = this.#getRandomInt(nrOfUsers); // TODO extrahera till metod
+    const user = this.#userRegistry.findUserByIndex(randomIndex); // TODO extrahera till metod
 
     if (this.#shouldRemoveUserWhenChosen) {
+      // TODO extrahera till egen metod
       this.#userRegistry.removeUserByIndex(randomIndex);
     }
     return user;
   }
 
   #getRandomInt(max) {
+    // TODO Egen klass?
     return Math.floor(Math.random() * max);
   }
 }

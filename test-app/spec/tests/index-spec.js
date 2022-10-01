@@ -1,4 +1,5 @@
 import UserRandomizer from "../../../module/src/index.js";
+import { NotFoundException } from "../../../module/src/models/exceptions/NotFoundException.js";
 import { User } from "../../../module/src/models/user.js";
 
 var sut;
@@ -26,9 +27,9 @@ describe("Randomizer test", () => {
   });
 
   it("Should get null if no users are present", () => {
-    const user = sut.getRandomUser();
-
-    expect(user).toEqual(null);
+    expect(() => {
+      sut.getRandomUser();
+    }).toThrow(new NotFoundException("No user to be found"));
   });
 
   it("Should get execution mode", () => {
