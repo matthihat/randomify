@@ -66,12 +66,6 @@ describe("User registry tests", () => {
     expect(userOne.id).toEqual(1);
   });
 
-  // it("Should throw error if provided userId is not a number", () => {
-  //   expect(() => {
-  //     sut.createUserWith("1", null);
-  //   }).toThrow(new InvalidTypeException("UserId must be a number"));
-  // });
-
   it("Should throw error if provided name is not a string", () => {
     expect(() => {
       sut.createUserWith(1, 1);

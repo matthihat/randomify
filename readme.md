@@ -1,10 +1,12 @@
-# Readme
+#R andomify
 
-## Summary
+### Readme
 
-This a simple library where you create a list of users and randomly pick one of the users. You can also configure the list to remove the user or not when randomly chosen. This library also contains the "test-app" where unit tests for this library resides.
+### Summary
 
-## Examples
+This a simple library where you create a list of users and randomly pick one of the users. You can also configure the list to remove the user or not when randomly chosen. This library also contains the "test-app" where unit tests for this library resides. This library can be user when you randomly needs to generate a user. Say that you want someone to do something, then you can use this library to randomly select a user. :)
+
+### Examples
 
 Below are examples on how to use the library and it's methods.
 
@@ -14,23 +16,23 @@ Add users to the randomizer and generate a random user:
 
     randomizer.addUser("name of user"); //Add a user to the randomizer.
 
-    randomizer.addUserWith(1234, "name of user") //Add a user (with a specific id) to the randomizer.
+    randomizer.addUserWith(1234, "name of user") //Add a user (with a specific id) to the randomizer. The id can be anything in a string-format.
 
     const chosenUser = randomizer.getRandomUser(); //Gets a random users from the users in the list.
 
 Configure the randomizer to remove the user from the list when it has been randomly chosen:
 
-    randomizer.getExecutionMode() //True if user is eliminated otherwise false.
+    randomizer.getExecutionMode() //True if user should be elimitated when chosen
 
     randomizer.shouldRemoveUserWhenChosen(boolean) //when true is provided, the user is eliminated from the list of users.
 
-## Language and dependecies
+### Language and dependecies
 
-### Library
+#### Library
 
 JavaScript, any ECMA-script standard that supports modules.
 
-### Test-app
+#### Test-app
 
 If you want to run the unit tests contained in the test-app the following dependecies are required:
 
@@ -42,7 +44,7 @@ If you want to run the unit tests contained in the test-app the following depend
       "jasmine-spec-reporter": "^7.0.0"
     }
 
-## Installation guidelines
+### Installation guidelines
 
 1. Download the library from [GitHub](https://github.com/matthihat/randomify)
 2. Import the UserRandomizer library from index.js from the directory where you have downloaded the library.
@@ -57,20 +59,20 @@ If you want to run the unit tests in the test-app:
 2. Navigate to the test-app directory and run 'npm run test'
 3. See results in console.
 
-## Licensing
+### Licensing
 
 The [MIT License](https://opensource.org/licenses/mit).
 
-## Version
+### Version
 
-1.0.0
+1.0.1
 
-## Releases
+### Releases
 
-1.0.0
+1.0.1
 
-## Bug reporting & Contribution
+### Bug reporting & Contribution
 
-Email me at
+By opening issues or opening pull-requests for this module at [Github](https://github.com/matthihat/1dv610_lab02)
 
 ### Known issues

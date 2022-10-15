@@ -51,22 +51,21 @@ export default class UserRandomizer {
   }
 
   /**
-   * Randomly selects a user. //TODO Informera om att användaren tas bort ibland.
+   * Randomly selects a user. User is removed if 'getExecutionMode' is set to true and a user is selected.
    *
    * @throws {NotFoundException} - If no user was to be found.
    * @returns {User} - The user that was randomly picked.
    */
   getRandomUser() {
-    const nrOfUsers = this.#userRegistry.getNrOfUsers(); // TODO byt ut till isEmpty()
+    const nrOfUsers = this.#userRegistry.getNrOfUsers();
     if (nrOfUsers == 0) {
-      throw new NotFoundException("No user to be found"); // Kasta fel istället
+      throw new NotFoundException("No user to be found");
     }
 
-    const randomIndex = this.#getRandomInt(nrOfUsers); // TODO extrahera till metod
-    const user = this.#userRegistry.findUserByIndex(randomIndex); // TODO extrahera till metod
+    const randomIndex = this.#getRandomInt(nrOfUsers);
+    const user = this.#userRegistry.findUserByIndex(randomIndex);
 
     if (this.#shouldRemoveUserWhenChosen) {
-      // TODO extrahera till egen metod
       this.#userRegistry.removeUserByIndex(randomIndex);
     }
     return user;

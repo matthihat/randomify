@@ -36,7 +36,7 @@ export class UserRegistry {
    * @throws {IllegalIdException, InvalidTypeException} - Error if id is not unique or if types are incompatible.
    */
   createUserWith(userId, name) {
-    this.#typeValidator.validateUserIdShouldBeANumber(userId);
+    // this.#typeValidator.validateUserIdShouldBeANumber(userId);
     this.#typeValidator.validateNameShouldBeString(name);
 
     // Throws error if id is not unique in array
