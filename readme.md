@@ -1,4 +1,4 @@
-#R andomify
+# Randomify
 
 ### Readme
 
@@ -71,8 +71,16 @@ The [MIT License](https://opensource.org/licenses/mit).
 
 1.0.1
 
+## For developers
+
+Feel free to build upon this module. As it is in plain Javascript you don't need any other dependencies.
+
 ### Bug reporting & Contribution
 
-By opening issues or opening pull-requests for this module at [Github](https://github.com/matthihat/1dv610_lab02)
+By opening issues or opening pull-requests for this module at [Github](https://github.com/matthihat/randomify). Feel free to fork this project and happy coding!
 
 ### Known issues
+
+## For examiner
+
+An app that uses this module can be found at [Github](https://github.com/matthihat/1dv610_lab02)
